@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp7.MainPage">
+
+    <StackLayout>
+        <Entry x:Name="STU_ID" Placeholder="ID"/>
+        <Entry x:Name="STU_NAME"  Placeholder="Name"/>
+        <Entry x:Name="STU_DEPT" Placeholder="Placeholder"/>
+        <Button x:Name="ADD_BUTT" Text="ADD" Clicked="ADD_BUTT_Clicked"/>
+
+        <Label Text="Student List: " FontSize="18"/>
+
+        <ListView x:Name="Stu_List_View"
+                  HasUnevenRows="True"
+                  ItemTapped="Stu_List_View_ItemTapped">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding ID}"/>
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Department}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
